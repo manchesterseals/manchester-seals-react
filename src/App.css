@@ -1,0 +1,128 @@
+#root {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #10223a, #0a0f1a 50%, #070b12);
+  color: #e9eef7;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.app__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.75rem;
+  color: #7fa2d9;
+  margin-bottom: 0.5rem;
+}
+
+.app__subhead {
+  margin-top: 0.5rem;
+  color: #b5c3da;
+  max-width: 480px;
+}
+
+.app__status {
+  display: flex;
+  align-items: center;
+}
+
+.pill {
+  background: #1f2e45;
+  color: #d3def0;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.pill--loading {
+  background: #2b3f5e;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.app__content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.app__error {
+  background: rgba(255, 77, 109, 0.15);
+  border: 1px solid rgba(255, 77, 109, 0.4);
+  color: #ff9cb2;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+}
+
+.app__loading,
+.app__empty {
+  color: #b5c3da;
+  background: rgba(20, 32, 50, 0.7);
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(123, 149, 189, 0.3);
+}
+
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.roster-card {
+  background: rgba(16, 30, 48, 0.85);
+  border: 1px solid rgba(103, 133, 175, 0.3);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 12px 30px rgba(4, 10, 20, 0.35);
+}
+
+.roster-card h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem;
+  color: #f0f5ff;
+}
+
+.roster-card pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.85rem;
+  color: #c7d3e9;
+  background: rgba(8, 14, 23, 0.6);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(93, 120, 161, 0.3);
+}
+
+@media (max-width: 720px) {
+  .app__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
