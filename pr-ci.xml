@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ciPipeline name="pr-ci">
+  <steps>
+    <step name="checkout">
+      <run>git checkout $GIT_COMMIT</run>
+    </step>
+    <step name="build">
+      <run>npm ci</run>
+      <run>npm run build</run>
+    </step>
+    <step name="test">
+      <run>npm test -- --watchAll=false</run>
+    </step>
+  </steps>
+</ciPipeline>
